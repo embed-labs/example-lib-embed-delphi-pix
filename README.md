@@ -198,6 +198,9 @@ O retorno para este método consiste em um JSON (sempre), no seguinte formato:
     "resultado": {
         "status_code": 1,
         "status_message": "iniciado",
+        "chave_pix": "",                // chave pix para pagamento (copia e cola)
+        "tid": "",                      // id da transação pix
+        "e2eid": ""                     // id da transferencia entre bancos
     }
 }
 ```

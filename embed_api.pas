@@ -20,7 +20,7 @@ type
     function Configurar: string;
     function Iniciar: string;
     function GerarPagamento(Valor: string): string;
-    function GerarEstorno(Valor: string; IdTx: string; IdE2E: string): string;
+    function GerarReembolso(Valor: string; IdTx: string; IdE2E: string): string;
     function GeyKeyCode(): string;
     function GetStatus: string;
     function Finalizar: string;
@@ -73,9 +73,9 @@ begin
   Result := lib.ObterValor(Output, STATUS_CODE);
 end;
 
-function TEmbedApi.GerarEstorno(Valor: string; IdTx: string; IdE2E: string): string;
+function TEmbedApi.GerarReembolso(Valor: string; IdTx: string; IdE2E: string): string;
 begin
-  var Operacao := 'get_estorno';
+  var Operacao := 'get_reembolso';
   var Input := Operacao + ';'
             + Valor + ';'
             + IdTx + ';'

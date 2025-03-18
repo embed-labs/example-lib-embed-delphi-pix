@@ -1337,14 +1337,14 @@ object EmbedUi: TEmbedUi
       050000000049454E44AE426082}
     Proportional = True
   end
-  object BtnGetEstorno: TButton
+  object BtnGetReembolso: TButton
     Left = 100
     Top = 220
     Width = 429
     Height = 30
-    Caption = 'Gerar Estorno'
+    Caption = 'Gerar Reembolso'
     TabOrder = 1
-    OnClick = BtnGetEstornoClick
+    OnClick = BtnGetReembolsoClick
   end
   object BtnGetPagamento: TButton
     Left = 100
@@ -1359,7 +1359,7 @@ object EmbedUi: TEmbedUi
     Left = 100
     Top = 264
     Width = 429
-    Height = 105
+    Height = 49
     TabOrder = 2
   end
 end

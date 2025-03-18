@@ -9,11 +9,11 @@ uses
 type
   TEmbedUi = class(TForm)
     BtnGetPagamento: TButton;
-    BtnGetEstorno: TButton;
+    BtnGetReembolso: TButton;
     ImgEmbed: TImage;
     EditLink: TEdit;
     procedure BtnGetPagamentoClick(Sender: TObject);
-    procedure BtnGetEstornoClick(Sender: TObject);
+    procedure BtnGetReembolsoClick(Sender: TObject);
     procedure ShowStatus(Status: string);
   private
     { Private declarations }
@@ -71,19 +71,19 @@ begin
   end;
 end;
 
-procedure TEmbedUi.BtnGetEstornoClick(Sender: TObject);
+procedure TEmbedUi.BtnGetReembolsoClick(Sender: TObject);
 var
   ValorStr, IdTxStr, IdE2EStr, Output: string;
 begin
-  ValorStr := InputBox('Pix - Estorno', 'Digite o valor (em centavos):', '');
-  IdTxStr := InputBox('Pix - Estorno', 'Digite o ID da transação (TXID):', '');
-  IdE2EStr := InputBox('Pix - Estorno', 'Digite o ID da transação ponta-a-ponta (E2EID):', '');
+  ValorStr := InputBox('Pix - Reebolso', 'Digite o valor (em centavos):', '');
+  IdTxStr := InputBox('Pix - Reebolso', 'Digite o ID da transação (TXID):', '');
+  IdE2EStr := InputBox('Pix - Reebolso', 'Digite o ID da transação ponta-a-ponta (E2EID):', '');
   api.Iniciar();
   ShowStatus('[PIX] Iniciado');
-  Output := api.GerarEstorno(ValorStr, IdTxStr, IdE2EStr);
+  Output := api.GerarReembolso(ValorStr, IdTxStr, IdE2EStr);
   if Output = '1' then
   begin
-    ShowStatus('[PIX] Estorno');
+    ShowStatus('[PIX] Reebolso');
     while Output = '1' do
     begin
       Output := api.GetStatus;
@@ -102,7 +102,7 @@ begin
   end
   else
   begin
-    ShowStatus('[PIX] Falha ao iniciar pagamento');
+    ShowStatus('[PIX] Falha ao iniciar reebolso');
   end;
 end;
 

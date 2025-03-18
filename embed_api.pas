@@ -45,9 +45,9 @@ begin
   var Produto := 'pix'; // PIX como produto de pagamento
   var SubProduto := '2'; // SubProduto do PIX (pode ser o banco ou parceiro)
   var Timeout := '300'; // Timeout para o tempo de cada operação
-  var Username := 'ef2f515f-95d5-487e-9398-0df168db2044'; // Nome de usuário fornecido
-  var Password := '1E4WwfmTMJGyrJEkRSE8BRG'; // Senha fornecida
-  var Documento := '52548677000162'; // Documento informado para cadastro
+  var Username := ''; // Nome de usuário fornecido
+  var Password := ''; // Senha fornecida
+  var Documento := ''; // Documento informado para cadastro
   var Input := Produto + ';'
             + SubProduto + ';'
             + Timeout + ';'
